@@ -35,7 +35,7 @@ public class DriverCargoUnloader extends DriverSidedTileEntity {
 				// Never actually happens due to a bug
 				return new Object[] { false, "TARGET_LACKS_INVENTORY" };
 			} else if (tileEntity.targetEmpty) {
-				return new Object[] { false, "TARET_EMPTY" };
+				return new Object[] { false, "TARGET_EMPTY" };
 			}
 
 			return new Object[] { true, "SUCCESS" };

@@ -31,7 +31,7 @@ public class DriverCargoLoader extends DriverSidedTileEntity {
 			} else if (tileEntity.noTarget) {
 				return new Object[] { false, "TARGET_NOT_FOUND" };
 			} else if (tileEntity.targetFull) {
-				return new Object[] { false, "TARET_FULL" };
+				return new Object[] { false, "TARGET_FULL" };
 			} else if (tileEntity.targetNoInventory) {
 				return new Object[] { false, "TARGET_LACKS_INVENTORY" };
 			}
