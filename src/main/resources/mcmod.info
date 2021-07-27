@@ -1,7 +1,7 @@
 [
 {
   "modid": "galacticcomputers",
-  "name": "GalacticComputers",
+  "name": "Galactic Computers",
   "description": "This mod provides integration between OpenComputers and GalactiCraft.",
   "version": "${version}",
   "mcversion": "1.12.2",
