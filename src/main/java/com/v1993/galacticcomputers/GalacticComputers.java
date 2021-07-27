@@ -17,14 +17,14 @@ import com.v1993.galacticcomputers.gccore.GCCoreSubmod;
 public class GalacticComputers {
 	public static final String MODID = "galacticcomputers";
 	public static final String NAME = "Galactic Computers";
-	public static final String VERSION = "0.1"; // FIXME: use build-time replacement
+	public static final String VERSION = "0.1";
 
 	private static Logger logger;
 
 	private static List<SubMod> submods;
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
+	public void preInit(FMLPreInitializationEvent event) throws Exception {
 		logger = event.getModLog();
 		submods = new ArrayList<SubMod>();
 
@@ -33,26 +33,16 @@ public class GalacticComputers {
 		logger.info("Unconditionally loading GalactiCraft Core integration");
 		submods.add(new GCCoreSubmod());
 
-		try {
-			if (Loader.isModLoaded("galacticraftcore")) {
-				logger.info("Loading GalactiCraft Planets integration");
-				submods.add((SubMod) Class.forName("com.v1993.galacticcomputers.gcplanets.GCPlanetsSubmod")
-						.getDeclaredConstructor().newInstance());
-			}
-		} catch (Exception e) {
-			logger.error("Failed to load GC Planets support!");
-			logger.catching(e);
+		if (Loader.isModLoaded("galacticraftplanets")) {
+			logger.info("Loading GalactiCraft Planets integration");
+			submods.add((SubMod) Class.forName("com.v1993.galacticcomputers.gcplanets.GCPlanetsSubmod")
+					.getDeclaredConstructor().newInstance());
 		}
 
-		try {
-			if (Loader.isModLoaded("galaxyspace")) {
-				logger.info("Loading GalaxySpace integration");
-				submods.add((SubMod) Class.forName("com.v1993.galacticcomputers.galaxyspace.GalaxySpaceSubmod")
-						.getDeclaredConstructor().newInstance());
-			}
-		} catch (Exception e) {
-			logger.error("Failed to load GalaxySpace support!");
-			logger.catching(e);
+		if (Loader.isModLoaded("galaxyspace")) {
+			logger.info("Loading GalaxySpace integration");
+			submods.add((SubMod) Class.forName("com.v1993.galacticcomputers.galaxyspace.GalaxySpaceSubmod")
+					.getDeclaredConstructor().newInstance());
 		}
 
 		for (SubMod smod : submods) {
