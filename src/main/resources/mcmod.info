@@ -1,0 +1,16 @@
+[
+{
+  "modid": "galacticcomputers",
+  "name": "GalacticComputers",
+  "description": "This mod provides integration between OpenComputers and GalactiCraft.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["v1993"],
+  "credits": "Fill this later...",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
