@@ -9,8 +9,17 @@
   "updateUrl": "",
   "authorList": ["v1993"],
   "credits": "OpenComputers and GalactiCraft teams for developing base mods, Thaumic Computers author for great examples.",
-  "logoFile": "",
+  "logoFile": "gcomp-logo.png",
   "screenshots": [],
-  "dependencies": []
+  "requiredMods": [
+    "opencomputers",
+    "galacticraftcore"
+  ],
+  "dependencies": [
+    "opencomputers",
+    "galacticraftcore",
+    "galacticraftplanets",
+    "galaxyspace"
+  ]
 }
 ]
