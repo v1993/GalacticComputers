@@ -8,8 +8,8 @@ import com.v1993.galacticcomputers.SubMod;
 public class GalaxySpaceSubmod extends SubMod {
 	@Override
 	public void init(FMLInitializationEvent event) {
+		// Blocks
 		Driver.add(new DriverFuelGenerator());
-
 		Driver.add(new DriverPlanetaryShield());
 		Driver.add(new DriverWindTurbine());
 		Driver.add(new DriverHybridSolarPanel());
@@ -18,5 +18,8 @@ public class GalaxySpaceSubmod extends SubMod {
 		Driver.add(new DriverMagneticFieldGenerator());
 		Driver.add(new DriverPanelsController());
 		Driver.add(new DriverSolarWindPanel());
+
+		// Items
+		Driver.add(new ConverterIModificationItem());
 	}
 }
