@@ -5,7 +5,17 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import org.apache.logging.log4j.Logger;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
 
 import java.util.List;
@@ -49,6 +59,7 @@ public class GalacticComputers {
 			smod.preInit(event);
 		}
 
+		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@EventHandler
@@ -62,6 +73,28 @@ public class GalacticComputers {
 	public void postInit(FMLPostInitializationEvent event) {
 		for (SubMod smod : submods) {
 			smod.postInit(event);
+		}
+	}
+	
+	@SubscribeEvent
+	public void registerBlocks(RegistryEvent.Register<Block> event) {
+		for (SubMod smod : submods) {
+			smod.registerBlocks(event);
+		}
+	}
+
+	@SubscribeEvent
+	public void registerItems(RegistryEvent.Register<Item> event) {
+		for (SubMod smod : submods) {
+			smod.registerItems(event);
+		}
+	}
+
+	@SideOnly(Side.CLIENT)
+	@SubscribeEvent
+	public void registerModels(ModelRegistryEvent event) {
+		for (SubMod smod : submods) {
+			smod.registerModels(event);
 		}
 	}
 }

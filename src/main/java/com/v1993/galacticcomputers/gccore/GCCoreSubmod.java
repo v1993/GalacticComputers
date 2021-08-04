@@ -1,7 +1,16 @@
 package com.v1993.galacticcomputers.gccore;
 
 import li.cil.oc.api.Driver;
+import net.minecraft.block.Block;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.v1993.galacticcomputers.SubMod;
 
@@ -40,5 +49,24 @@ public class GCCoreSubmod extends SubMod {
 		Driver.add(new DriverAirLockController());
 		Driver.add(new DriverTelemetryUnit());
 		Driver.add(new DriverEmergencyBox());
+	}
+
+	@GameRegistry.ObjectHolder("galacticcomputers:sealed_cable")
+	public static BlockSealedCable blockSealedCable;
+
+	@Override
+	public void registerBlocks(RegistryEvent.Register<Block> event) {
+		event.getRegistry().register(new BlockSealedCable());
+		GameRegistry.registerTileEntity(TileEntitySealedCable.class, new ResourceLocation("galacticcomputers:sealed_cable_tile"));
+	};
+
+	@Override
+	public void registerItems(RegistryEvent.Register<Item> event) {
+		event.getRegistry().register(new ItemBlock(blockSealedCable).setRegistryName(blockSealedCable.getRegistryName()));
+	};
+	
+	@Override
+	public void registerModels(ModelRegistryEvent event) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockSealedCable), 0, new ModelResourceLocation("galacticcomputers:sealed_cable", "inventory"));
 	}
 }
