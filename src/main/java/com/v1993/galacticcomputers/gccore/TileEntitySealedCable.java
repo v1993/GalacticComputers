@@ -13,7 +13,7 @@ public class TileEntitySealedCable extends TileEntityEnvironment implements Anal
 	public Node[] onAnalyze(EntityPlayer arg0, EnumFacing arg1, float arg2, float arg3, float arg4) {
 		return null;
 	}
-	
+
 	TileEntitySealedCable() {
 		node = Network.newNode(this, Visibility.None).create();
 	}

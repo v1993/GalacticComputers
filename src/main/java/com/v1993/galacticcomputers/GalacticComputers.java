@@ -75,7 +75,7 @@ public class GalacticComputers {
 			smod.postInit(event);
 		}
 	}
-	
+
 	@SubscribeEvent
 	public void registerBlocks(RegistryEvent.Register<Block> event) {
 		for (SubMod smod : submods) {

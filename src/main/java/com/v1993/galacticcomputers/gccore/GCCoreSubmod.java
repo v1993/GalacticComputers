@@ -57,16 +57,19 @@ public class GCCoreSubmod extends SubMod {
 	@Override
 	public void registerBlocks(RegistryEvent.Register<Block> event) {
 		event.getRegistry().register(new BlockSealedCable());
-		GameRegistry.registerTileEntity(TileEntitySealedCable.class, new ResourceLocation("galacticcomputers:sealed_cable_tile"));
+		GameRegistry.registerTileEntity(TileEntitySealedCable.class,
+				new ResourceLocation("galacticcomputers:sealed_cable_tile"));
 	};
 
 	@Override
 	public void registerItems(RegistryEvent.Register<Item> event) {
-		event.getRegistry().register(new ItemBlock(blockSealedCable).setRegistryName(blockSealedCable.getRegistryName()));
+		event.getRegistry()
+				.register(new ItemBlock(blockSealedCable).setRegistryName(blockSealedCable.getRegistryName()));
 	};
-	
+
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockSealedCable), 0, new ModelResourceLocation("galacticcomputers:sealed_cable", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(blockSealedCable), 0,
+				new ModelResourceLocation("galacticcomputers:sealed_cable", "inventory"));
 	}
 }
