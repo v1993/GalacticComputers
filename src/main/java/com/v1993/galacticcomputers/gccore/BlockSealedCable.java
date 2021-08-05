@@ -4,8 +4,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 
 public class BlockSealedCable extends Block {
 	public BlockSealedCable() {
@@ -25,5 +27,10 @@ public class BlockSealedCable extends Block {
 	@Override
 	public TileEntity createTileEntity(World world, IBlockState state) {
 		return new TileEntitySealedCable();
+	}
+
+	@Override
+	public CreativeTabs getCreativeTabToDisplayOn() {
+		return GalacticraftCore.galacticraftBlocksTab;
 	}
 }

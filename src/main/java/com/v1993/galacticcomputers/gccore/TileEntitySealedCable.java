@@ -14,7 +14,7 @@ public class TileEntitySealedCable extends TileEntityEnvironment implements Anal
 		return null;
 	}
 
-	TileEntitySealedCable() {
+	public TileEntitySealedCable() {
 		node = Network.newNode(this, Visibility.None).create();
 	}
 }

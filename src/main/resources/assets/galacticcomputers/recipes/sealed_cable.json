@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "galacticcomputers:sealed_cable",
+    "data": 0
+  },
+  "pattern": [
+    "XYX"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "galacticraftcore:basic_block_core",
+      "data": 4
+    },
+    "Y": {
+      "item": "opencomputers:cable",
+      "data": 0
+    }
+  }
+}
