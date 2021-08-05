@@ -27,7 +27,7 @@ import com.v1993.galacticcomputers.gccore.GCCoreSubmod;
 public class GalacticComputers {
 	public static final String MODID = "galacticcomputers";
 	public static final String NAME = "Galactic Computers";
-	public static final String VERSION = "0.1";
+	public static final String VERSION = "1.0.0";
 
 	private static Logger logger;
 
